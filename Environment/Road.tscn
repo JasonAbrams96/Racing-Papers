@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/road.png" type="Texture" id=1]
+[ext_resource path="res://Environment/Road.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 499, 16 )
+
+[node name="Road" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 499, 16 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 725.5, 16 )
+scale = Vector2( 88.35, 1 )
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 38, 0 )
+
+[node name="Position2D2" type="Position2D" parent="Positions"]
+position = Vector2( 190, 0 )
+
+[node name="Position2D3" type="Position2D" parent="Positions"]
+position = Vector2( 350, 0 )
+
+[node name="Position2D4" type="Position2D" parent="Positions"]
+position = Vector2( 510, 0 )
+
+[node name="Position2D5" type="Position2D" parent="Positions"]
+position = Vector2( 670, 0 )
+
+[node name="Position2D6" type="Position2D" parent="Positions"]
+position = Vector2( 850, 0 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

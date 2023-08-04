@@ -1,0 +1,189 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/MenuAssets/Arrow_hover.png" type="Texture" id=1]
+[ext_resource path="res://Assets/MenuAssets/Arrow_not_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/MenuAssets/Arrow_pressed.png" type="Texture" id=3]
+[ext_resource path="res://Menus/Slideshow.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/IndieFlower-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 19
+font_data = SubResource( 1 )
+
+[node name="Slideshow" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Panel" type="ColorRect" parent="Control"]
+margin_right = 297.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[node name="Label" type="Label" parent="Control/Panel/ColorRect"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 137.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "How to play:"
+
+[node name="Label2" type="Label" parent="Control/Panel/ColorRect"]
+margin_left = 6.0
+margin_top = 39.0
+margin_right = 137.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 3 )
+text = "Use the 'A' key to slow down/stop
+Use the 'D' key to drive forward"
+
+[node name="Panel2" type="ColorRect" parent="Control"]
+margin_left = 297.0
+margin_right = 594.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[node name="Label" type="Label" parent="Control/Panel2/ColorRect"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 137.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "How to play (2):"
+
+[node name="Label2" type="Label" parent="Control/Panel2/ColorRect"]
+margin_left = 6.0
+margin_top = 39.0
+margin_right = 137.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 3 )
+text = "Use the 'E' key to throw
+newspapers!"
+
+[node name="Panel3" type="ColorRect" parent="Control"]
+margin_left = 594.0
+margin_right = 891.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[node name="Label" type="Label" parent="Control/Panel3/ColorRect"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 137.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "How to play (3):"
+
+[node name="Label2" type="Label" parent="Control/Panel3/ColorRect"]
+margin_left = 6.0
+margin_top = 39.0
+margin_right = 137.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 3 )
+text = "Grab fuel cans or newspapers to
+keep driving and getting money!"
+
+[node name="Panel4" type="ColorRect" parent="Control"]
+margin_left = 891.0
+margin_right = 1188.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[node name="Label" type="Label" parent="Control/Panel4/ColorRect"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 137.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "Goal:"
+
+[node name="Label2" type="Label" parent="Control/Panel4/ColorRect"]
+margin_left = 6.0
+margin_top = 39.0
+margin_right = 137.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 3 )
+text = "Upgrade your car to go further!
+Get the Super Car!"
+
+[node name="OverPanel" type="ColorRect" parent="."]
+margin_left = -429.0
+margin_bottom = 124.0
+color = Color( 0.345098, 0.537255, 0.533333, 1 )
+
+[node name="OverPanel2" type="ColorRect" parent="."]
+margin_left = 297.0
+margin_right = 1460.0
+margin_bottom = 124.0
+color = Color( 0.345098, 0.537255, 0.533333, 1 )
+
+[node name="ArrowBtn" type="TextureButton" parent="."]
+margin_left = -48.0
+margin_top = 40.0
+margin_right = 32.0
+margin_bottom = 120.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 1 )
+stretch_mode = 3
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="ArrowBtn" to="." method="_on_ArrowBtn_pressed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menus/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Assets/MenuAssets/Home_hover.png" type="Texture" id=2]
+[ext_resource path="res://Assets/MenuAssets/Home_pressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MenuAssets/Home_not_pressed.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/IndieFlower-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = SubResource( 1 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.34902, 0.34902, 0.34902, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+color = Color( 0.345098, 0.537255, 0.533333, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 450.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
+text = "Go check out some of these people:"
+
+[node name="Label2" type="Label" parent="ColorRect/ColorRect"]
+margin_left = 54.0
+margin_top = 69.0
+margin_right = 383.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 3 )
+text = "Game BG Music by Filippo Game Audio"
+
+[node name="LinkButton" type="LinkButton" parent="ColorRect/ColorRect/Label2"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 493.0
+margin_top = 17.0
+margin_right = 547.0
+margin_bottom = 31.0
+text = "YouTube"
+
+[node name="Label3" type="Label" parent="ColorRect/ColorRect"]
+margin_left = 54.0
+margin_top = 107.0
+margin_right = 537.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 3 )
+text = "Main Menu BG Music by LunaLucid"
+
+[node name="lbl3Link" type="LinkButton" parent="ColorRect/ColorRect/Label3"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 493.0
+margin_top = 17.0
+margin_right = 547.0
+margin_bottom = 31.0
+focus_mode = 2
+text = "Itch.io"
+
+[node name="Label4" type="Label" parent="ColorRect/ColorRect"]
+margin_left = 54.0
+margin_top = 145.0
+margin_right = 537.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 3 )
+text = "Sound Effects by NOX"
+
+[node name="lbl4Link" type="LinkButton" parent="ColorRect/ColorRect/Label4"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 493.0
+margin_top = 17.0
+margin_right = 547.0
+margin_bottom = 31.0
+focus_mode = 2
+text = "Itch.io"
+
+[node name="Label5" type="Label" parent="ColorRect/ColorRect"]
+margin_left = 54.0
+margin_top = 190.0
+margin_right = 537.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 3 )
+text = "Car Sprites by ChaserSprites"
+
+[node name="lbl5Link" type="LinkButton" parent="ColorRect/ColorRect/Label5"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 493.0
+margin_top = 17.0
+margin_right = 547.0
+margin_bottom = 31.0
+focus_mode = 2
+text = "opengameart.org"
+
+[node name="HomeBtn" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.658824 )
+margin_left = 940.0
+margin_top = 343.0
+margin_right = 980.0
+margin_bottom = 382.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[connection signal="pressed" from="ColorRect/ColorRect/Label2/LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect/Label3/lbl3Link" to="." method="_on_lbl3Link_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect/Label4/lbl4Link" to="." method="_on_lbl4Link_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect/Label5/lbl5Link" to="." method="_on_lbl5Link_pressed"]
+[connection signal="pressed" from="HomeBtn" to="." method="_on_HomeBtn_pressed"]

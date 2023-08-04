@@ -1,0 +1,16 @@
+
+*.md5
+
+.import/
+
+*.png
+
+*.import
+
+*.wav
+
+*.ogg
+
+*.ttf
+
+Racing Papers/

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://Cars/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/Road.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cars/GUI.tscn" type="PackedScene" id=4]
+
+[node name="World" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -378.0 ]
+}
+
+[node name="p1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -46 )
+
+[node name="Camera2D" type="Camera2D" parent="p1"]
+offset = Vector2( 150, -131 )
+current = true
+smoothing_speed = 100.0
+
+[node name="p2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -99875, -46 )
+is_active = false
+
+[node name="Roads" type="Node2D" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource( 4 )]
+
+[node name="Road" parent="." instance=ExtResource( 3 )]
+is_blank_road = true
+
+[node name="Road2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -998, 0 )
+is_blank_road = true
+
+[node name="Road3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 998, 0 )
+is_blank_road = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
